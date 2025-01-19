@@ -5,6 +5,9 @@ import './App.css';
 import MPPDashPage from './pages/MPPDashBoardPage';
 import NewsPage from './pages/NewsPage';
 
+// THIS IS WHERE YOU CAN ADD IN MORE PAGES WITH THEIR PATH
+// HAVE THE PAGE COMPONENT HERE AND THEN MAKE SURE YOUR LINKS MATCH THE PATH HERE
+// IF YOU DONT MATCH THE LINKS YOU'LL GET A UNFOUND PAGE ERROR IN THE CONSOLE.LOG
 
 function App() {
   return (

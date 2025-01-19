@@ -12,6 +12,8 @@ export default function newsTile(props){
                 <p>{props.blurb}</p>
             </div>
             {/* <progress id="for" value="70" max="100"> 32% </progress> */}
+            {/* IF YOU EVER GET RIME YOU CAN IMPLEMENT THIS PROGRESS BAR */}
+            {/* I WOULD RECOMEND MAKING IT A COMPONENT BECASUE YOU ARE VERY LIMITED WITH THE PROGRESS TAG*/}
             <button>RaiseIt</button>
         </div>
     )

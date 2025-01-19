@@ -3,6 +3,11 @@ import WhiteLogo from "../assets/images/white_logo.png"
 import "../styles/header.css"
 
 export default function HeaderComp(props){
+    // THIS CONTAINS LINKS TO OTHER PAGES IN THE HREF PORTION OF LINKS
+    // TRY NOT TO MESS TOO MUCH WITH THE FUNCTIONALITY HERE ITS ALL COSMETICS FOR THE ANIMATIONS
+    // IF YOU ADD MORE PAGES ADD THE LINK HERE, SET THE PATH IN APP.JSX AND YOU SHOULD BE OK
+    // I USED THE REACT ROUTER FOR THE LINKS SO WHEN YOU HOST MAKE SURE YOU USE A REWRITE AND NOT A REDIRECT
+
     const[transition, setTransition] = useState(false)
     const headerRef = useRef(null)
     const [listText, setListText] = useState(false)

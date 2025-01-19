@@ -4,6 +4,10 @@ import olaVid from "../assets/images/OLA_VID.mp4"
 import IssueCard from "./issueCard"
 import { useEffect, useRef, useState } from "react"
 
+// ONCE YOU GET THE BACKEND DONE AND THE REQUESTS READY, REPLACE THE CARDINFO PLACEHOLDER WITH
+// A USEEFFECT THAT DOES THE REQUEST AND STORES THE DATA IN A USESTATE VARIABLE WHICH IS INITIALLY
+// AN EMPTY ARRAY AND GETS MAPPED IN THE CARDS FUNCTION
+
 const cardinfo = [
     {
         img: "https://images.squarespace-cdn.com/content/v1/63d1e8b46a9cb503deaf7b11/1677119192335-55ITC98GSJUI3I1TAK12/unsplash-image-JXg7Yq5b1wE.jpg?format=1500w",
@@ -43,6 +47,8 @@ export default function HomeBodyComponents(props){
     }, [props.yValue])
 
     return(
+        // FEEL FREE TO CHANGE THE TEXT WITHIN THE COMPONENTS
+        // MOST OF THESE WERE PLACEHOLDERS
         <div id="HOMEBODYCOMP">
             <div className="section1">
                 <h1>Your MPPS, Your Business</h1>
@@ -69,6 +75,7 @@ export default function HomeBodyComponents(props){
                 
                 <div className="horScroll">
                     <Cards />
+                    {/* THIS COMP IS THE FUNCTION ABOVE THAT MAPS ALL OF THE ELEMENTS IN THE ARRAY ABOVE */}
                 </div>
 
                 <h1 style={{marginBottom:"5%"}}>The Future is in your hands</h1>

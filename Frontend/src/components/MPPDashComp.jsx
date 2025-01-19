@@ -68,6 +68,9 @@ export default function MPPDashComp(){
     }, [])
 
     useEffect(()=>{
+        // FILTER FUNCTION IS FRONTEND BASED SO TRY NOT TO STORE TOO MANY TILES IN DUMMYDATA BECASUE IT
+        // CAN OVERLOAD THE CLIENT SIDE WITH TOO MUCH DATA AND SLOW IT DOWN
+        // EITHER MAKE IT BACKEND BASED OR DONT PASS TOO MANY TILES AT A REQUEST
 
         const filteredTiles = dummyData.filter((each) =>
             each.tile.toLowerCase().includes(filter.toLowerCase())

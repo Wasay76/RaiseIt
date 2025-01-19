@@ -51,6 +51,8 @@ export default function NewsContainer() {
     return (
         <div className="newsContainer">
             <h3>November 26</h3>
+            {/* MAKE THIS DYNAMICALLY GET THE DATE */}
+            {/* YOU PROB CAN KEEP IT IN THE FRONTEND DOESNT NEED TO BE PART OF THE REQUEST */}
             <h2><a href="/">RaiseIt</a></h2>
             <div className="tileContainer">
                 {showTiles()}
