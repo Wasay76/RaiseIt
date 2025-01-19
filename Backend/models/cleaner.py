@@ -4,6 +4,7 @@ with open("data.json", "r") as file:
     data = json.load(file)
 
 final = []
+# THIS WAS JUST A TEST DONT WORRY ABOUT IT
 
 for i, each in enumerate(data):
     if "Members" not in each:

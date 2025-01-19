@@ -3,6 +3,7 @@ const Petition = require("./petition.js");
 const fs = require('fs');
 
 // THIS LETS YOU TAKE A JSON FILE AND UPLOAD ITS CONTENT TO A SPECIFC SCHEMA
+// THIS WAS JUST A TEST NOT VERY IMPORTANT
 
 mongoose.connect('mongodb+srv://shadmansohel04:8Pn4mZAV4SJswCXt@cluster0.crj3k.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
   .then(() => {

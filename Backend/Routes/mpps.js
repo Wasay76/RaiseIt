@@ -5,6 +5,7 @@ const {CreateMPP, mppData} = require('../controllers/mpps')
 const {getPetitionsByMPP} = require("../controllers/petition")
 
 router.route('/createMPP').post(CreateMPP)
+// ROUTE FOR MPPDASH PAGE
 router.route("/findMPPData").get(mppData)
 router.route("/petitionFind").post(getPetitionsByMPP)
 

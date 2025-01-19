@@ -17,6 +17,7 @@ app.use(cors({
 
 app.use(express.json())
 
+// ADD THE MIDDLEWARE HERE
 app.use('/bills', BillRouter)
 app.use('/mpps', MppRouter)
 
