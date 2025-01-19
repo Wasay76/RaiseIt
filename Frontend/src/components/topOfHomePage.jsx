@@ -8,6 +8,8 @@ export default function TopOfHomePage(props){
     const [width, setWidth] = useState("100%")
     const [radius, setRadius] = useState(false)
 
+    // MOST OF THE WORK HERE IS PRETTY COSMETIC. TRY NOT TO MESS WITH IT TOO MUCH BECAUSE IT MAY MESS WITH THE ANIMATIONS
+    // DELAY FOR ANIMATION    
     useEffect(()=>{
         setTimeout(() => {
             setTransition(true)

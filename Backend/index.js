@@ -8,7 +8,9 @@ const connectDB = require('./db/connect')
 const BillRouter = require("./Routes/bills")
 const MppRouter = require("./Routes/mpps")
 
-// DEV
+// DEV MODE
+// MAKE SURE TO LIMIT TO RAISEIT WEBSITE WHEN PUBLISHING
+
 app.use(cors({
     origin: '*'
 }));
@@ -23,6 +25,7 @@ const port = process.env.PORT || 3000;
 const start = async () => {
   try {
     // MAKE IT A ENV LATER
+    // CONNECT TO WASAYS DATABASE
     await connectDB("mongodb+srv://shadmansohel04:8Pn4mZAV4SJswCXt@cluster0.crj3k.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
     app.listen(port, () =>
       console.log(`Server is listening on port ${port}...`)
