@@ -1,0 +1,124 @@
+header{
+    display: flex;
+    width: auto;
+    font-family: "Inter", sans-serif;
+}
+
+.topHeader{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 3%;
+}
+
+.topHeader img{
+    width: 10%;
+}
+
+.contactButton{
+    width: 10%;
+    border-radius: 20px;
+    border: none;
+    height: fit-content;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-size: 1.2vw;
+    background-color: rgb(199, 81, 56);
+    color: white;
+}
+
+.beforeNav {
+    position: fixed;
+    right: 50%;
+    transform: translateX(50%);
+    top: 7%;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50px;
+    border: none;
+    width: 0%;
+    overflow: hidden;
+    padding: 1.5% 2.5% 1.5% 2.5%;
+    opacity: 0;
+    transition: background-color 0.4s ease-in-out, width 0.6s ease-in-out, opacity 0.2s ease-in-out, top 0.2s ease-in-out, right 0.5s ease-in-out;
+}
+
+.afterNav{
+    width: 23%;
+    opacity: 1;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.beforeUl{
+    position: relative;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    width: 100%;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+    color: transparent;
+}
+
+.beforeUl li{
+    color: inherit;
+}
+
+.afterUl{
+    opacity: 1;
+    color: inherit;
+}
+
+.aTag{
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+}
+
+.fullSize{
+    background-color: #F8F0E3;
+}
+
+.pushUpHead{
+    width: 30%;
+    background-color: white;
+    top: 0%;
+    color: black;
+    z-index: 10;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+@media(max-width:768px){
+    .topHeader img{
+        width: 100px;
+    }
+
+    .contactButton{
+        width: 150px;
+        align-self: center;
+        font-size: 1.2rem;
+        padding: 2%;
+    }
+
+    .beforeNav{
+        top: 10%;
+        font-size: 1rem;
+        font-weight: normal;
+        padding: 3%;
+    }
+
+    .afterNav{
+        width: 70%;
+    }
+
+    .pushUpHead{
+        top: 0%;
+    }
+
+    .aTag{
+        font-weight: 100;
+    }
+
+}

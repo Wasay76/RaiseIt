@@ -1,0 +1,44 @@
+.issueCard{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+    border-radius: 20px;
+    padding: 1%;
+    padding-top: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.issueCard:hover{
+    flex: 2;
+}
+
+.issueCard h2{
+    padding-top: 5%;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.issueCard a{
+    position: absolute;
+    color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: bold;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.issueCard a:hover{
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+}
