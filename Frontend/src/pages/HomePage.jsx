@@ -19,6 +19,8 @@ export default function HomePage(){
     })
 
     return(
+        // ONCE YOU ADD A COMPONENT THAT YOU WANT TO ASSOCIATE WITH THE HEIGHT
+        // JUST ADD THE yValue AS A PROP
         <>
             <TopOfHomePage yValue={yValue}/>
             <HomeBodyComponents yValue={yValue}/>

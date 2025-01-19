@@ -16,6 +16,7 @@ function App() {
         <Route index element={<HomePage />} />
         <Route path='/MPPDash' element={<MPPDashPage />} />
         <Route path='/issues' element={<NewsPage />}/>
+        {/* ONLY PUT PAGE COMPONENTS HERE */}
       </Routes>
     </BrowserRouter>
   );
