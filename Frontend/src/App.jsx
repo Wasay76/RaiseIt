@@ -4,6 +4,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom"
 import './App.css';
 import MPPDashPage from './pages/MPPDashBoardPage';
 import NewsPage from './pages/NewsPage';
+import BillsPage from "./pages/BillsPage";
 
 // THIS IS WHERE YOU CAN ADD IN MORE PAGES WITH THEIR PATH
 // HAVE THE PAGE COMPONENT HERE AND THEN MAKE SURE YOUR LINKS MATCH THE PATH HERE
@@ -16,6 +17,8 @@ function App() {
         <Route index element={<HomePage />} />
         <Route path='/MPPDash' element={<MPPDashPage />} />
         <Route path='/issues' element={<NewsPage />}/>
+        <Route path="/bills" element={<BillsPage />} />
+
         {/* ONLY PUT PAGE COMPONENTS HERE */}
       </Routes>
     </BrowserRouter>

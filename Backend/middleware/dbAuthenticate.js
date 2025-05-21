@@ -7,4 +7,3 @@ const dbAuthenticate = (req, res, next) => {
   };
   
   module.exports = dbAuthenticate;
-  

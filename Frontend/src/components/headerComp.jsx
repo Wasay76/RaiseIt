@@ -45,6 +45,8 @@ export default function HeaderComp(props){
                     <li><a className="aTag" href="/about">About</a></li>
                     <li><a className="aTag" href="/issues">Issues</a></li>
                     <li><a className="aTag" href="/MPPDash">Mpps</a></li>
+                    <li><a className="aTag" href="/bills">Bills</a></li>
+
                 </ul>
             </nav>
 
