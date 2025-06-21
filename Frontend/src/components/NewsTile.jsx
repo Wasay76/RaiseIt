@@ -1,20 +1,25 @@
+// src/components/NewsTile.jsx
+import React from "react";
+import "../styles/newsPage.css";      // ← import your media-query CSS here
 
-export default function newsTile(props){
-
-    return(
-        <div className="newsTile">
-            <img src={props.img} alt="tileImage" />
-            <div className="textTile">
-                <header>
-                    <h3>{props.catagory}</h3>
-                    <h3>{props.location}</h3>
-                </header>
-                <p>{props.blurb}</p>
-            </div>
-            {/* <progress id="for" value="70" max="100"> 32% </progress> */}
-            {/* IF YOU EVER GET RIME YOU CAN IMPLEMENT THIS PROGRESS BAR */}
-            {/* I WOULD RECOMEND MAKING IT A COMPONENT BECASUE YOU ARE VERY LIMITED WITH THE PROGRESS TAG*/}
-            <button>RaiseIt</button>
+export default function NewsTile({ img, title, location, blurb, url }) {
+  return (
+    <div className="newsTile">
+      <a href={url} target="_blank" rel="noopener noreferrer" className="tileLink">
+        <div className="imgWrapper">
+          <img
+            src={img || "https://via.placeholder.com/300x200?text=No+Image"}
+            alt={title}
+          />
         </div>
-    )
+        <div className="textTile">
+          <header>
+            <h3>{title}</h3>
+            <small>{location}</small>
+          </header>
+          <p>{blurb}</p>
+        </div>
+      </a>
+    </div>
+  );
 }

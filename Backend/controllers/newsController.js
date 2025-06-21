@@ -1,13 +1,13 @@
-// controllers/newsController.js
-const { fetchTopHeadlines } = require('../services/newsService');
+// Backend/controllers/newsController.js
+const { fetchOntarioPolitics } = require('../Services/newsService');
 
-const getNews = async (req, res) => {
+async function getNews(req, res) {
   try {
-    const data = await fetchTopHeadlines();
+    const data = await fetchOntarioPolitics();
     res.json(data);
-  } catch (error) {
-    res.status(500).json({ message: 'Error fetching news', error: error.message });
+  } catch (err) {
+    res.status(500).json({ message: 'Error fetching news', error: err.message });
   }
-};
+}
 
 module.exports = { getNews };

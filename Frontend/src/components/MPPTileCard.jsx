@@ -1,13 +1,22 @@
+// src/components/MPPTileCard.jsx
+import React from "react";
+import "../styles/MPPTileCard.css";  // new CSS
 
-export default function MPPTile(props){
-    // SEE ISSUECARD BECAUSE THEY FOLLOW SIMLAR FORMAT AND THE COMMENT THERE APPLIES HERE
-
-    return(
-        <div className="mppTile">
-            <h1>{props.title}</h1>
-            <h2>Related Bill Title: {props.relatedBillTile}</h2>
-            <h2># Questions Raised: {props.questionsNum}</h2>
-            <h2>Recent State: {props.recentState}</h2>
-        </div>
-    )
+export default function MPPTileCard({
+  name,
+  party,
+  riding,
+  email,
+  phone,
+  photoUrl,
+}) {
+  return (
+    <div className="billsTile"> {/* reuse the same card class */}
+      <h2>{name}</h2>            {/* main heading */}
+      <h3>Party: {party}</h3>     {/* subheading */}
+      <p><strong>Riding:</strong> {riding}</p>
+      {email && <p><strong>Email:</strong> {email}</p>}
+      {phone && <p><strong>Phone:</strong> {phone}</p>}
+    </div>
+  );
 }

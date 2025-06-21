@@ -1,82 +1,152 @@
-@media(max-width:768px){
-    .newsContainer{
-        padding-top: 10%;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-        background-color: rgb(65, 64, 64);
-        align-items: center;
-    }
+/* src/styles/newsPage.css */
 
-    .newsContainer h3{
-        padding-left: 5%;
-        align-self: flex-start;
-        color: rgba(255, 255, 255, 0.696);
-    }
-    .newsContainer h2{
-        padding-left: 5%;
-        font-size: 3rem;
-        color: white;
-        font-weight: 400;
-        align-self: flex-start;
-        margin-bottom: 4%;
-    }
+/* ─── Tile wrapper ───────────────────────────────────────────────── */
 
-    .newsContainer h2 a{
-        color: inherit;
-        text-decoration: inherit;
+.tileContainer {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding: 1rem;
+  }
+  
+  /* ─── Card ───────────────────────────────────────────────────────── */
+  
+  .newsTile {
+    flex: 0 0 300px;           /* fixed width */
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    overflow: hidden;          /* hide anything that spills out */
+    
+    /* Fix the overall card height */
+    height: 420px;
+  }
+  
+  /* ─── Image ──────────────────────────────────────────────────────── */
+  
+  .newsTile img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+  
+  /* ─── Text container ─────────────────────────────────────────────── */
+  
+  .textTile {
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;                   /* take up remaining space */
+    overflow: hidden;          /* critical for clamping */
+  }
+  
+  /* ─── Title ─────────────────────────────────────────────────────── */
+  
+  .textTile header h3 {
+    font-size: 1rem;
+    margin: 0;
+    white-space: nowrap;       /* single line */
+    overflow: hidden;
+    text-overflow: ellipsis;   /* … */
+  }
+  
+  /* ─── Source (small) ───────────────────────────────────────────── */
+  
+  .textTile header small {
+    color: #666;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  /* ─── Description ───────────────────────────────────────────────── */
+  
+  .textTile p {
+    margin: 0.5rem 0;
+    
+    /* multiline clamp */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;     /* show maximum 4 lines */
+    overflow: hidden;
+  }
+  
+  /* ─── Button ────────────────────────────────────────────────────── */
+  
+  .newsTile button {
+    margin-top: auto;          /* push button to the bottom */
+    padding: 0.5rem;
+    background: #007acc;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  
+  /* ──────────── MOBILE (width < 768px) ──────────── */
+  
+  @media (max-width: 768px) {
+    .newsContainer {
+      padding-top: 10%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      overflow: visible;        /* ← allow tiles to show */
+      background-color: rgb(65, 64, 64);
+      align-items: center;
     }
-
-    .tileContainer{
-        width: 95%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+  
+    .tileContainer {
+      width: 95%;
+      display: flex;
+      flex-direction: column;   /* stack vertically on mobile */
+      align-items: center;
+      overflow-x: visible;      /* ← show every tile */
+      gap: 1rem;
     }
-
-    .newsTile{
-        width: 100%;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        border-radius: 20px;
-        border: none;
-        background-color: rgb(96, 96, 96);
-        margin-bottom: 10%;
+  
+    .newsTile {
+      width: 100%;
+      max-width: 400px;
+      display: flex;
+      flex-direction: column;
+      border-radius: 20px;
+      background-color: rgb(96, 96, 96);
+      margin-bottom: 10%;
+      overflow: visible;        /* ← ensure no clipping */
     }
-
-    .textTile{
-        padding: 3%;
-        display: flex;
-        flex-direction: column;
+  
+    .textTile {
+      padding: 3%;
+      display: flex;
+      flex-direction: column;
     }
-
-    .newsTile header{
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 4%;
+  
+    .newsTile header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 4%;
     }
-
-    .newsTile header h3{
-        padding: 0;
+  
+    .newsTile p {
+      width: 100%;
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: white;
+      margin-bottom: 4%;
     }
-
-    .newsTile p{
-        width: 100%;
-        font-size: 1.3rem;
-        font-weight: 400;
-        color: white;
-        margin-bottom: 4%;
+  
+    .newsTile button {
+      background-color: rgb(199, 81, 56);
+      padding: 3%;
+      font-size: 1rem;
+      color: white;
+      border: none;
+      font-weight: 300;
     }
-
-    .newsTile button{
-        background-color: rgb(199, 81, 56);
-        padding: 3%;
-        font-size: 1rem;
-        color: white;
-        border: none;
-        font-weight: 300;
-    }
-
-}
+  }
+  

@@ -1,119 +1,53 @@
-import { useEffect, useState } from "react"
-import "../styles/MPPDash.css"
-import MPPTile from "./MPPTileCard"
+// src/components/MPPDashComp.jsx
+import React, { useEffect, useState } from "react";
+import { getAllMPPs } from "../services/mppService";
+import MPPTileCard from "./MPPTileCard";
+import WhiteLogo from "../assets/images/white_logo.png";
+import "../styles/MPPDash.css";        // ← new CSS
 
-export default function MPPDashComp(){
-    const [filter, setFilter] = useState("")
-    const [tiles, setTiles]= useState([])
-    const [postalCode, setPostalCode] = useState("")
-    const [yourMPP, setYourMpp] = useState({
-        name: "",
-        riding: "",
-        party: ""
-    })
+export default function MPPDashComp() {
+  const [mpps, setMpps]     = useState([]);
+  const [filter, setFilter] = useState("");
 
-    // will be replaced with axios.get(params)
-    // params will be bare bones
-    // likely just location data and sort accordingly
-    // will let the filter do the work
-    // will be filled with info from the database
+  useEffect(() => {
+    getAllMPPs().then(setMpps).catch(console.error);
+  }, []);
 
-    const dummyData = [
-        {
-            tile: "Health Care",
-            relatedBillTile: "Vote",
-            questionsNum: "''",
-            recentState: "..."
-        },
-        {
-            tile: "Transportation",
-            relatedBillTile: "Vote",
-            questionsNum: "''",
-            recentState: "..."
-        },
-        {
-            tile: "Education",
-            relatedBillTile: "Vote",
-            questionsNum: "''",
-            recentState: "..."
-        },
-        {
-            tile: "Environment",
-            relatedBillTile: "Pending",
-            questionsNum: "5",
-            recentState: "Reviewing proposals"
-        },
-        {
-            tile: "Housing",
-            relatedBillTile: "Debate",
-            questionsNum: "3",
-            recentState: "Awaiting committee review"
-        },
-        {
-            tile: "Economy",
-            relatedBillTile: "Vote",
-            questionsNum: "7",
-            recentState: "Amendments added"
-        },
-        {
-            tile: "Public Safety",
-            relatedBillTile: "Passed",
-            questionsNum: "2",
-            recentState: "Signed into law"
-        }
-    ]    
+  const filtered = mpps.filter(
+    (m) =>
+      m.name.toLowerCase().includes(filter.toLowerCase()) ||
+      m.riding.toLowerCase().includes(filter.toLowerCase())
+  );
 
-    useEffect(()=>{
-        setTiles(dummyData)
-    }, [])
+  return (
+    <div className="BillsDashComp">  {/* reuse the same wrapper class */}
+      <a href="http://localhost:5173/">
+        <img src={WhiteLogo} alt="RaiseIt Logo" className="billsLogo" />
+      </a>
 
-    useEffect(()=>{
-        // FILTER FUNCTION IS FRONTEND BASED SO TRY NOT TO STORE TOO MANY TILES IN DUMMYDATA BECASUE IT
-        // CAN OVERLOAD THE CLIENT SIDE WITH TOO MUCH DATA AND SLOW IT DOWN
-        // EITHER MAKE IT BACKEND BASED OR DONT PASS TOO MANY TILES AT A REQUEST
+      <h2>Your MPPs Dashboard</h2>
 
-        const filteredTiles = dummyData.filter((each) =>
-            each.tile.toLowerCase().includes(filter.toLowerCase())
-        )
+      <input
+        type="text"
+        placeholder="Filter by name or riding"
+        className="filterBox"
+        value={filter}
+        onChange={(e) => setFilter(e.target.value)}
+      />
 
-        setTiles(filteredTiles)
-
-    }, [filter])
-
-    function yourInfoSubmit(){
-        if(postalCode !== ""){
-            return console.log(postalCode)
-        }
-        return alert("Postal Code Cannot Be Empty")
-    }
-
-    function showTiles(){
-        return tiles.map((each, index)=>{
-            return <MPPTile key={index} title={each.tile} relatedBillTile={each.relatedBillTile} questionsNum={each.questionsNum} recentState={each.recentState} />
-        })
-    }
-
-    return(
-        <div className="MPPDashComp">
-            <h1><a href="/">RaiseIt</a></h1>
-            <h2>Your MPP Dashboard</h2>
-            <div className="postalForm">
-                <input onChange={(e)=>{setPostalCode(e.target.value)}} type="text" placeholder="Enter Your Postal Code"/>
-                <button onClick={yourInfoSubmit}>Submit</button>
-            </div>
-
-            <input onChange={(e)=>{setFilter(e.target.value)}} className="filterBox" type="text" placeholder="Filter" />
-
-            <div className="yourInfo">
-                <h3>MPP Name: {yourMPP.name}</h3>
-                <h3>Riding: {yourMPP.riding}</h3>
-                <h3>Party: {yourMPP.party}</h3>
-            </div>
-
-            <div className="tileHolder">
-                {showTiles()}
-            </div>
-            
-        </div>
-    )
+      <div className="tileHolder">
+        {filtered.map((mpp) => (
+          <MPPTileCard
+            key={mpp._id}
+            name={mpp.name}
+            party={mpp.party}
+            riding={mpp.riding}
+            email={mpp.email}
+            phone={mpp.phone}
+            photoUrl={mpp.photoUrl}
+          />
+        ))}
+      </div>
+    </div>
+  );
 }

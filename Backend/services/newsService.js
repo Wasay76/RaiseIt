@@ -1,24 +1,26 @@
+// Backend/services/newsService.js
 const axios = require('axios');
 
 const NEWS_API_URL = 'https://newsapi.org/v2/everything';
-const API_KEY = process.env.NEWS_API_KEY;
+const API_KEY      = process.env.NEWS_API_KEY;
 
-const fetchTopHeadlines = async () => {
+async function fetchOntarioPolitics() {
   try {
     const response = await axios.get(NEWS_API_URL, {
       params: {
-        q: '"Ontario politics" OR "Queen\'s Park" OR "Doug Ford"',  // 👈 very specific
+        // broader search:
+        q: 'Ontario politics OR Queen\'s Park OR Doug Ford OR Ontario legislature',
         language: 'en',
-        sortBy: 'relevancy',
-        domains: 'cbc.ca,globalnews.ca,thestar.com,ctvnews.ca,tvo.org,torontosun.com',
-        apiKey: API_KEY,
+        sortBy:   'relevancy',  // most relevant first
+        pageSize: 3,            // return exactly 3 articles
+        apiKey:   API_KEY,
       },
     });
     return response.data;
-  } catch (error) {
-    console.error('Error fetching news:', error.message);
-    throw error;
+  } catch (err) {
+    console.error('Error fetching news:', err.message);
+    throw err;
   }
-};
+}
 
-module.exports = { fetchTopHeadlines };
+module.exports = { fetchOntarioPolitics };

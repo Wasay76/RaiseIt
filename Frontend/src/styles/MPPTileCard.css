@@ -1,0 +1,28 @@
+/* identical to BillsTileCard.css but class names reused */
+.billsTile {
+    background: #e0e0e0;
+    width: 100%;
+    max-width: 800px;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    color: #333;
+    text-align: left;
+  }
+  
+  .billsTile h2 {
+    margin: 0 0 0.5rem;
+    color: #e6574c;
+  }
+  
+  .billsTile h3 {
+    margin: 0 1rem 1rem 0;
+    color: #e6574c;
+  }
+  
+  .billsTile p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  

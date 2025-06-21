@@ -1,91 +1,35 @@
-@media(max-width: 768px){
-    .MPPDashComp{
-        background-color: rgb(240, 193, 240);
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-        align-items: center;
-        padding-top: 5%;
-    }
-
-    .MPPDashComp h1{
-        margin-bottom: 6%;
-        font-weight: 600;
-        font-size: 1.5rem;
-        color: blue;
-    }
-
-    .MPPDashComp h1 a{
-        font-size: inherit;
-        font-weight: inherit;
-        text-decoration: none;
-        color: inherit;
-    }
-
-    .MPPDashComp h2{
-        font-size: 1.3rem;
-        font-weight: bold;
-        margin-bottom: 4%;
-    }
-
-    .postalForm{
-        display: flex;
-        width: 70%;
-        justify-content: center;
-        margin-bottom: 5%;
-    }
-
-    .postalForm input{
-        width: 60%;
-        padding: 2%;
-        font-size: 1rem;
-    }
-
-    .postalForm button{
-        width: 25%;
-        padding: 2%;
-        font-size: 1rem;
-    }
-
-    .filterBox{
-        width: 80%;
-        margin-bottom: 5%;
-        padding: 3%;
-        border-radius: 10px;
-        border: none;
-        font-size: 1.2rem;
-    }
-
-    .yourInfo{
-        width: 90%;
-        text-align: left;
-    }
-
-    .yourInfo h3{
-        margin-bottom: 6%;
-        font-size: 1.3rem;
-    }
-
-    .tileHolder{
-        width: 90%;
-    }
-
-    .mppTile{
-        background-color: white;
-        box-shadow: 3px 3px 8px 2px rgba(0, 0, 0, 0.1);
-        padding: 3%;        
-        margin-bottom: 5%;
-    }
-
-    .mppTile h1{
-        text-align: center;
-    }
-
-    .mppTile h1, .mppTile h2{
-        font-size: 1.2rem;
-        color: black;
-        font-weight: 400;
-    }
-
-
-}
+/* identical to BillsDash.css */
+.BillsDashComp {
+    background: #1f1f1f;
+    min-height: 100vh;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 0;
+  }
+  
+  .billsLogo {
+    width: 100px;
+    margin-bottom: 1rem;
+  }
+  
+  .BillsDashComp h2 {
+    color: #e6574c;
+    margin-bottom: 1rem;
+  }
+  
+  .filterBox {
+    width: 300px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .tileHolder {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+  
