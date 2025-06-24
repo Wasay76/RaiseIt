@@ -1,4 +1,5 @@
 require('dotenv').config();
+console.log('DBG Startup: DBAPI_URL =', process.env.DBAPI_URL);
 
 // Core imports
 const express = require('express');
