@@ -1,5 +1,5 @@
 // Backend/controllers/newsController.js
-const { fetchOntarioPolitics } = require('../Services/newsService');
+const { fetchOntarioPolitics } = require('../services/newsService');
 
 async function getNews(req, res) {
   try {
