@@ -1,20 +1,21 @@
 // billsService.js
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:5004/api/bills";
+// Use the env‑var injected at build time.
+// Make sure you’ve set VITE_BACKEND_URL in Railway’s Frontend → Variables!
+const API_BASE_URL = `${import.meta.env.VITE_BACKEND_URL}/api/bills`;
 
 export async function getAllBills(testMode = false) {
   try {
     const response = await axios.get(`${API_BASE_URL}/getAllBills`, {
       params: { testMode },
     });
-    return response.data; // Should be an array of bills
+    return response.data; // array of bills
   } catch (error) {
     console.error("getAllBills error:", error);
     throw error;
   }
 }
-
 export async function getBillsByBillNumber(billNumber, testMode = false) {
   try {
     const response = await axios.get(`${API_BASE_URL}/getBillsByBillNumber`, {
