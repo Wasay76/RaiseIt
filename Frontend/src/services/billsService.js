@@ -3,7 +3,8 @@ import axios from "axios";
 
 // Use the env‑var injected at build time.
 // Make sure you’ve set VITE_BACKEND_URL in Railway’s Frontend → Variables!
-const API_BASE_URL = `${import.meta.env.VITE_BACKEND_URL}/api/bills`;
+const API_BASE_URL = "https://raiseit-production.up.railway.app/api/bills";
+
 
 export async function getAllBills(testMode = false) {
   try {
