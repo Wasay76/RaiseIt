@@ -11,11 +11,15 @@ const newsRoutes = require('./Routes/newsRoutes');
 const app = express();
 
 // Middleware
-app.use(cors({ // Enable CORS with specific settings
-  origin: "http://localhost:5173", // Frontend origin
+app.use(cors({
+  origin: [
+    "http://localhost:5173", // for local dev
+    "https://raiseit-production-4b2c.up.railway.app" // for Railway frontend
+  ],
   methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization"], // Include 'Authorization' for protected routes
+  allowedHeaders: ["Content-Type", "Authorization"],
 }));
+
 
 app.use(express.json()); // Parse JSON request bodies
 
