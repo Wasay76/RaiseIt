@@ -10,8 +10,13 @@ export default function MPPDashComp() {
   const [filter, setFilter] = useState("");
 
   useEffect(() => {
-    getAllMPPs().then(setMpps).catch(console.error);
+    console.log("VITE_MPP_URL =", import.meta.env.VITE_MPP_URL);  // ← ADD THIS LINE
+  
+    getAllMPPs()
+      .then(setMpps)
+      .catch(console.error);
   }, []);
+  
 
   const filtered = mpps.filter(
     (m) =>
