@@ -13,8 +13,7 @@ const app = express();
 // Middleware
 app.use(cors({
   origin: [
-    "http://localhost:5173", // for local dev
-    "https://raiseit-production-4b2c.up.railway.app" // for Railway frontend
+    '*'
   ],
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
